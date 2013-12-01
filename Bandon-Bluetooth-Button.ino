@@ -1,6 +1,23 @@
 /*
-Bandon Bluetooth Button with RN42
+  Bandon Bluetooth Button with RN42 HID. Control media on mobile phones using a joystick/button and Bluetooth.
+
+  Copyright (C) 2013 Conor O'Neill
+
+  Original BPLib Arduino Library is Copyright Basel Al-Rudainy, 6 april 2013. https://github.com/baselsw/BPLib with modifications by Conor O'Neill
+
+  Conor O'Neill's code is Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
 */
+
 
 #include <BPLib.h>
 
@@ -15,9 +32,13 @@ void setup(){
 }
 
 void loop(){
-  // Check X-Axis Pot on Joystick
+  // Check X-Axis Pot on Joystick on Analogue Pin A0
   int xAxis = analogRead(A0);
+
+  // Check Y-Axis Pot on Joystick on Analogue Pin A1
   int yAxis = analogRead(A1);
+
+  // Check for button press
   int button = digitalRead(buttonPin);
   
   
